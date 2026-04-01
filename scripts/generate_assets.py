@@ -295,9 +295,9 @@ def generate_trend_chart(repos, commits_by_year, out_path):
     fig.patch.set_facecolor(BG_COLOR)
 
     datasets = [
-        ("Cumulative Stars ⭐", stars_vals, COLOR_STARS, "o-"),
-        ("Repos Created 📦", repos_vals, COLOR_REPOS, "s--"),
-        ("Commits 🔨", commits_vals, COLOR_COMMITS, "^:"),
+        ("Cumulative Stars", stars_vals, COLOR_STARS, "o-"),
+        ("Repositories Created", repos_vals, COLOR_REPOS, "s--"),
+        ("Commits", commits_vals, COLOR_COMMITS, "^:"),
     ]
 
     for ax, (title, vals, color, style) in zip(axes, datasets):

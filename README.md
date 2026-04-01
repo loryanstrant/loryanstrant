@@ -144,7 +144,7 @@ If it's broken, I'll try to fix it. If it doesn't exist, I'll build it. And if i
     </td>
   </tr>
   <tr>
-    <td width="50%" valign="top">
+    <td colspan="2" valign="top">
       <h3>
         <a href="https://www.mscloudlogos.com">☁️ mscloudlogos.com</a>
       </h3>
@@ -157,7 +157,6 @@ If it's broken, I'll try to fix it. If it doesn't exist, I'll build it. And if i
         <a href="https://github.com/loryanstrant/MicrosoftCloudLogos">MicrosoftCloudLogos</a> repo.
       </p>
     </td>
-    <td width="50%" valign="top"></td>
   </tr>
 </table>
 
