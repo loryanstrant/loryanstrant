@@ -191,6 +191,10 @@ _SVG_FONT = (
     "sans-serif"
 )
 
+# Approximate width of a single character in the 12 px SVG font, used for
+# horizontal spacing calculations in the repo-card footer.
+_APPROX_CHAR_WIDTH = 7.2
+
 def get_repos():
     repos = []
     page = 1
@@ -526,7 +530,7 @@ def generate_repo_card(repo, out_path):
             f'font-size="12" fill="{footer_fill}">'
             f"{xml_escape(lang)}</text>"
         )
-        fx += 18 + len(lang) * 7.2 + 16
+        fx += 18 + len(lang) * _APPROX_CHAR_WIDTH + 16
 
     if stars:
         ix = int(fx)
@@ -535,7 +539,7 @@ def generate_repo_card(repo, out_path):
             f'<text x="{ix + 20}" y="{fy}" font-family="{_SVG_FONT}" '
             f'font-size="12" fill="{footer_fill}">{stars}</text>'
         )
-        fx = ix + 20 + len(str(stars)) * 7.2 + 16
+        fx = ix + 20 + len(str(stars)) * _APPROX_CHAR_WIDTH + 16
 
     if forks:
         ix = int(fx)
