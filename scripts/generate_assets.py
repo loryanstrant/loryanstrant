@@ -273,60 +273,49 @@ def generate_trend_chart(repos, commits_by_year, out_path):
         if 2019 <= y <= current_year
     )
 
-    stars_vals = [by_year.get(y, {}).get("stars", 0) for y in years]
+    # Compute cumulative stars (accumulating over time)
+    stars_per_year = [by_year.get(y, {}).get("stars", 0) for y in years]
+    stars_vals = []
+    running_total = 0
+    for s in stars_per_year:
+        running_total += s
+        stars_vals.append(running_total)
+
     repos_vals = [by_year.get(y, {}).get("repos", 0) for y in years]
     commits_vals = [commits_by_year.get(y, 0) for y in years]
 
-    fig, ax1 = plt.subplots(figsize=(10, 5))
-    fig.patch.set_facecolor(BG_COLOR)
-    ax1.set_facecolor(PANEL_COLOR)
-
     x = np.arange(len(years))
+    x_labels = [str(y) for y in years]
 
     COLOR_STARS = "#f1c40f"
     COLOR_REPOS = "#58a6ff"
     COLOR_COMMITS = "#3fb950"
 
-    # Stars on left axis
-    l1, = ax1.plot(x, stars_vals, "o-", color=COLOR_STARS,
-                   linewidth=2.5, markersize=7, label="Stars")
-    ax1.set_ylabel("Stars ⭐", color=COLOR_STARS, fontsize=11)
-    ax1.tick_params(axis="y", labelcolor=COLOR_STARS)
-    ax1.set_ylim(bottom=0)
+    fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+    fig.patch.set_facecolor(BG_COLOR)
 
-    # Repos & commits on right axis
-    ax2 = ax1.twinx()
-    ax2.set_facecolor(PANEL_COLOR)
-    l2, = ax2.plot(x, repos_vals, "s--", color=COLOR_REPOS,
-                   linewidth=2.5, markersize=7, label="Repos Created")
-    l3, = ax2.plot(x, commits_vals, "^:", color=COLOR_COMMITS,
-                   linewidth=2.5, markersize=7, label="Commits")
-    ax2.set_ylabel("Count", color=TEXT_COLOR, fontsize=11)
-    ax2.tick_params(axis="y", labelcolor=TEXT_COLOR)
-    ax2.set_ylim(bottom=0)
+    datasets = [
+        ("Cumulative Stars ⭐", stars_vals, COLOR_STARS, "o-"),
+        ("Repos Created 📦", repos_vals, COLOR_REPOS, "s--"),
+        ("Commits 🔨", commits_vals, COLOR_COMMITS, "^:"),
+    ]
 
-    ax1.set_xticks(x)
-    ax1.set_xticklabels([str(y) for y in years], color=TEXT_COLOR, fontsize=11)
-    ax1.tick_params(axis="x", colors=TEXT_COLOR)
+    for ax, (title, vals, color, style) in zip(axes, datasets):
+        ax.set_facecolor(PANEL_COLOR)
+        ax.plot(x, vals, style, color=color, linewidth=2.5, markersize=7)
+        ax.set_title(title, color=TEXT_COLOR, fontsize=12, pad=10)
+        ax.set_xticks(x)
+        ax.set_xticklabels(x_labels, color=TEXT_COLOR, fontsize=10)
+        ax.tick_params(axis="x", colors=TEXT_COLOR)
+        ax.tick_params(axis="y", labelcolor=TEXT_COLOR)
+        ax.set_ylim(bottom=0)
+        ax.grid(True, alpha=0.15, color=BORDER_COLOR, linestyle="--")
+        for spine in ax.spines.values():
+            spine.set_color(BORDER_COLOR)
 
-    for spine in list(ax1.spines.values()) + list(ax2.spines.values()):
-        spine.set_color(BORDER_COLOR)
-
-    ax1.grid(True, alpha=0.15, color=BORDER_COLOR, linestyle="--")
-    ax1.set_title(
-        "My GitHub Journey — Stars · Repos · Commits",
-        color=TEXT_COLOR, fontsize=13, pad=12,
-    )
-
-    handles = [l1, l2, l3]
-    ax1.legend(
-        handles,
-        [h.get_label() for h in handles],
-        loc="upper left",
-        facecolor=PANEL_COLOR,
-        edgecolor=BORDER_COLOR,
-        labelcolor=TEXT_COLOR,
-        fontsize=10,
+    fig.suptitle(
+        "My GitHub Journey",
+        color=TEXT_COLOR, fontsize=14, y=1.02,
     )
 
     plt.tight_layout()

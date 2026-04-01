@@ -15,10 +15,10 @@
 
   <!-- Social / profile badges -->
   <a href="https://www.linkedin.com/in/loryanstrant/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+    <img src="assets/linkedin-logo.png" alt="LinkedIn" height="28"/>
   </a>&nbsp;
-  <a href="https://mvp.microsoft.com/en-US/mvp/loryan-strant" target="_blank">
-    <img src="https://img.shields.io/badge/Microsoft_MVP-258ffa?style=for-the-badge&logo=microsoft&logoColor=white" alt="Microsoft MVP"/>
+  <a href="https://mvp.microsoft.com/en-US/MVP/profile/d9ba70c0-3c9a-e411-93f2-9cb65495d3c4" target="_blank">
+    <img src="assets/mvp-logo.png" alt="Microsoft MVP" height="28"/>
   </a>&nbsp;
   <a href="https://www.loryanstrant.com" target="_blank">
     <img src="https://img.shields.io/badge/Blog-loryanstrant.com-0078D4?style=for-the-badge&logo=rss&logoColor=white" alt="Blog"/>
@@ -50,13 +50,13 @@ If it's broken, I'll try to fix it. If it doesn't exist, I'll build it. And if i
 
 <div align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api?username=loryanstrant&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true"
+    src="https://github-readme-stats.vercel.app/api?username=loryanstrant&show_icons=true&theme=github_dark&hide_border=true&include_all_commits=true&cache_seconds=86400"
     alt="Loryan's GitHub stats"
     height="165"
   />
   &nbsp;
   <img
-    src="https://streak-stats.demolab.com?user=loryanstrant&theme=github-dark-blue&hide_border=true"
+    src="https://streak-stats.demolab.com?user=loryanstrant&theme=github-dark-blue&hide_border=true&cache_seconds=86400"
     alt="GitHub streak stats"
     height="165"
   />
@@ -96,22 +96,22 @@ If it's broken, I'll try to fix it. If it doesn't exist, I'll build it. And if i
 
 <div align="center">
   <a href="https://github.com/loryanstrant/MicrosoftCloudLogos">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=MicrosoftCloudLogos&theme=github_dark&hide_border=true" alt="MicrosoftCloudLogos"/>
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=MicrosoftCloudLogos&theme=github_dark&hide_border=true&cache_seconds=86400" alt="MicrosoftCloudLogos"/>
   </a>
   <a href="https://github.com/loryanstrant/PowerThings">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=PowerThings&theme=github_dark&hide_border=true" alt="PowerThings"/>
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=PowerThings&theme=github_dark&hide_border=true&cache_seconds=86400" alt="PowerThings"/>
   </a>
   <a href="https://github.com/loryanstrant/ha-MU-TH-UR-6000-cards">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=ha-MU-TH-UR-6000-cards&theme=github_dark&hide_border=true" alt="ha-MU-TH-UR-6000-cards"/>
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=ha-MU-TH-UR-6000-cards&theme=github_dark&hide_border=true&cache_seconds=86400" alt="ha-MU-TH-UR-6000-cards"/>
   </a>
   <a href="https://github.com/loryanstrant/ha-weylandyutani">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=ha-weylandyutani&theme=github_dark&hide_border=true" alt="ha-weylandyutani"/>
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=ha-weylandyutani&theme=github_dark&hide_border=true&cache_seconds=86400" alt="ha-weylandyutani"/>
   </a>
   <a href="https://github.com/loryanstrant/anzusergroups">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=anzusergroups&theme=github_dark&hide_border=true" alt="anzusergroups"/>
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=anzusergroups&theme=github_dark&hide_border=true&cache_seconds=86400" alt="anzusergroups"/>
   </a>
   <a href="https://github.com/loryanstrant/ha-youtubevideocard">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=ha-youtubevideocard&theme=github_dark&hide_border=true" alt="ha-youtubevideocard"/>
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=ha-youtubevideocard&theme=github_dark&hide_border=true&cache_seconds=86400" alt="ha-youtubevideocard"/>
   </a>
 </div>
 
@@ -136,8 +136,9 @@ If it's broken, I'll try to fix it. If it doesn't exist, I'll build it. And if i
         <a href="https://www.letmecorrectthatforyou.com">🔍 letmecorrectthatforyou.com</a>
       </h3>
       <p>
-        A catalogue of typos, incorrect logos, and factual errors found <em>within Microsoft's own products and documentation</em>.
-        If Microsoft can misspell "SharePoint" in SharePoint, someone should keep track — and that someone is me.
+        A catalogue of typos, incorrect logos, and factual errors found across the Microsoft ecosystem —
+        not just in Microsoft's own products and documentation, but also from partners, consultants, MVPs, and everyday users.
+        If someone can misspell "SharePoint" in SharePoint, someone should keep track — and that someone is me.
         Equal parts frustrating and entertaining.
       </p>
     </td>
@@ -150,51 +151,17 @@ If it's broken, I'll try to fix it. If it doesn't exist, I'll build it. And if i
       <p>
         The definitive collection of Microsoft cloud product logos — consistently sized, correctly branded, and
         freely available. Whether you're building a presentation, designing an architecture diagram, or just need
-        the right Entra ID icon at the right resolution, this is your one-stop shop.
+        the right Entra ID icon at the right resolution, this is your one-stop shop. Even some Microsoft staff
+        use this as their go-to resource.
         Also available as the open-source
         <a href="https://github.com/loryanstrant/MicrosoftCloudLogos">MicrosoftCloudLogos</a> repo.
       </p>
     </td>
-    <td width="50%" valign="top">
-      <h3>
-        <a href="https://mvp.microsoft.com/en-US/mvp/loryan-strant">🏆 Microsoft MVP Profile</a>
-      </h3>
-      <p>
-        I've been recognised as a <strong>Microsoft Most Valuable Professional (MVP)</strong> for my contributions
-        to the Microsoft tech community. The MVP award is given to independent experts who share their expertise,
-        real-world knowledge, and passion for Microsoft technologies. You can find my full profile, speaking
-        history, and contributions on the official Microsoft MVP site.
-      </p>
-      <a href="https://mvp.microsoft.com/en-US/mvp/loryan-strant" target="_blank">
-        <img src="https://img.shields.io/badge/Microsoft_MVP-258ffa?style=for-the-badge&logo=microsoft&logoColor=white" alt="Microsoft MVP"/>
-      </a>
-    </td>
+    <td width="50%" valign="top"></td>
   </tr>
 </table>
 
 ---
-
-## 🤝 Connect With Me
-
-<div align="center">
-  <a href="https://www.linkedin.com/in/loryanstrant/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-  </a>&nbsp;
-  <a href="https://mvp.microsoft.com/en-US/mvp/loryan-strant" target="_blank">
-    <img src="https://img.shields.io/badge/Microsoft_MVP-258ffa?style=for-the-badge&logo=microsoft&logoColor=white" alt="Microsoft MVP"/>
-  </a>&nbsp;
-  <a href="https://www.loryanstrant.com" target="_blank">
-    <img src="https://img.shields.io/badge/Blog-loryanstrant.com-0078D4?style=for-the-badge&logo=rss&logoColor=white" alt="Blog"/>
-  </a>&nbsp;
-  <a href="https://www.mscloudlogos.com" target="_blank">
-    <img src="https://img.shields.io/badge/MS_Cloud_Logos-mscloudlogos.com-737373?style=for-the-badge&logo=microsoft&logoColor=white" alt="mscloudlogos.com"/>
-  </a>&nbsp;
-  <a href="https://www.letmecorrectthatforyou.com" target="_blank">
-    <img src="https://img.shields.io/badge/Let_Me_Correct_That_For_You-d9534f?style=for-the-badge&logo=microsoftedge&logoColor=white" alt="letmecorrectthatforyou.com"/>
-  </a>
-</div>
-
-<br/>
 
 <div align="center">
   <sub>
