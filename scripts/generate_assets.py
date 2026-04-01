@@ -10,6 +10,7 @@ import re
 import sys
 import time
 from datetime import datetime, timezone
+from xml.sax.saxutils import escape as xml_escape
 
 import matplotlib
 matplotlib.use("Agg")
@@ -132,8 +133,63 @@ TOPIC_MAP = {
 }
 
 # ---------------------------------------------------------------------------
-# GitHub helpers
+# Language colour map (GitHub linguist colours)
 # ---------------------------------------------------------------------------
+LANGUAGE_COLORS = {
+    "Python": "#3572A5",
+    "JavaScript": "#f1e05a",
+    "TypeScript": "#3178c6",
+    "HTML": "#e34c26",
+    "CSS": "#563d7c",
+    "Shell": "#89e051",
+    "PowerShell": "#012456",
+    "Jinja": "#a52a22",
+    "Go": "#00ADD8",
+    "Ruby": "#701516",
+    "Java": "#b07219",
+    "C#": "#178600",
+    "C++": "#f34b7d",
+    "C": "#555555",
+    "Rust": "#dea584",
+    "Vue": "#41B883",
+}
+
+# ---------------------------------------------------------------------------
+# Octicon SVG path data (16×16 viewBox)
+# ---------------------------------------------------------------------------
+_ICON_STAR = (
+    "M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 "
+    ".416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347"
+    "l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 "
+    "0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25z"
+)
+_ICON_FORK = (
+    "M5 3.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm0 2.122a2.25 "
+    "2.25 0 1 0-1.5 0v.878A2.25 2.25 0 0 0 5.75 8.5h1.5v2.128a2.251 "
+    "2.251 0 1 0 1.5 0V8.5h1.5a2.25 2.25 0 0 0 2.25-2.25v-.878a2.25 "
+    "2.25 0 1 0-1.5 0v.878a.75.75 0 0 1-.75.75h-4.5A.75.75 0 0 1 5 "
+    "6.25v-.878zm3.75 7.378a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 "
+    "0zm3-8.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z"
+)
+_ICON_REPO = (
+    "M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75"
+    ".75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 "
+    "0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5zm"
+    "10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8zM5 "
+    "12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25"
+    ".25 0 0 1-.4.2l-1.45-1.087a.25.25 0 0 0-.3 0L5.4 15.7a.25"
+    ".25 0 0 1-.4-.2z"
+)
+_ICON_COMMIT = (
+    "M11.93 8.5a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 0 1 0-1.5h3.32"
+    "a4.002 4.002 0 0 1 7.86 0h3.32a.75.75 0 0 1 0 1.5Zm-1.43-.5a2.5 "
+    "2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"
+)
+
+_SVG_FONT = (
+    "-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, "
+    "sans-serif"
+)
 
 def get_repos():
     repos = []
@@ -325,6 +381,192 @@ def generate_trend_chart(repos, commits_by_year, out_path):
 
 
 # ---------------------------------------------------------------------------
+# SVG card generators  (replace unreliable github-readme-stats service)
+# ---------------------------------------------------------------------------
+
+def _svg_octicon(path_d, x, y, fill, size=16):
+    """Return an embedded SVG element for an Octicon at *(x, y)*."""
+    return (
+        f'<svg x="{x}" y="{y}" width="{size}" height="{size}" '
+        f'viewBox="0 0 16 16">'
+        f'<path fill-rule="evenodd" d="{path_d}" fill="{fill}"/></svg>'
+    )
+
+
+def _wrap_text(text, max_chars=54):
+    """Word-wrap *text* into at most two lines of *max_chars* each."""
+    if not text:
+        return [""]
+    text = text.strip()
+    if len(text) <= max_chars:
+        return [text]
+    words = text.split()
+    lines: list[str] = []
+    line = ""
+    for word in words:
+        candidate = f"{line} {word}".strip()
+        if len(candidate) > max_chars and line:
+            lines.append(line)
+            line = word
+            if len(lines) == 2:
+                break
+        else:
+            line = candidate
+    if line and len(lines) < 2:
+        lines.append(line)
+    # Truncate last line if the full description didn't fit
+    total_used = sum(len(l) for l in lines) + len(lines) - 1
+    if total_used < len(text) and len(lines) == 2:
+        lines[1] = lines[1][:max_chars - 3].rstrip() + "..."
+    return lines[:2]
+
+
+def generate_stats_card(repos, commits_by_year, out_path):
+    """Create an SVG stats card similar to github-readme-stats."""
+    total_stars = sum(r.get("stargazers_count", 0) for r in repos)
+    total_commits = sum(commits_by_year.values())
+    total_repos = len([r for r in repos if not r.get("fork", False)])
+    total_forks = sum(r.get("forks_count", 0) for r in repos)
+
+    w, h = 495, 195
+    title_fill = TEXT_COLOR
+    label_fill = "#8b949e"
+    value_fill = TEXT_COLOR
+
+    stats = [
+        ("Total Stars Earned", total_stars, _ICON_STAR, "#f1c40f"),
+        ("Total Commits", total_commits, _ICON_COMMIT, "#3fb950"),
+        ("Public Repos", total_repos, _ICON_REPO, "#58a6ff"),
+        ("Total Forks", total_forks, _ICON_FORK, "#8b949e"),
+    ]
+
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" '
+        f'height="{h}" viewBox="0 0 {w} {h}">',
+        f'<rect width="{w}" height="{h}" rx="4.5" fill="{BG_COLOR}"/>',
+        f'<text x="25" y="35" font-family="{_SVG_FONT}" font-size="18" '
+        f'font-weight="bold" fill="{title_fill}">'
+        f"Loryan&#x27;s GitHub Stats</text>",
+    ]
+
+    y_start = 68
+    y_step = 32
+    for i, (label, value, icon_path, icon_fill) in enumerate(stats):
+        y = y_start + i * y_step
+        parts.append(_svg_octicon(icon_path, 25, y - 13, icon_fill))
+        parts.append(
+            f'<text x="50" y="{y}" font-family="{_SVG_FONT}" '
+            f'font-size="14" fill="{label_fill}">'
+            f"{xml_escape(label)}:</text>"
+        )
+        parts.append(
+            f'<text x="{w - 25}" y="{y}" font-family="{_SVG_FONT}" '
+            f'font-size="14" font-weight="bold" fill="{value_fill}" '
+            f'text-anchor="end">{value:,}</text>'
+        )
+
+    parts.append("</svg>")
+
+    with open(out_path, "w", encoding="utf-8") as fh:
+        fh.write("\n".join(parts))
+    print(f"  Stats card saved -> {out_path}")
+
+
+def generate_repo_card(repo, out_path):
+    """Create an SVG pin card for a single repository."""
+    name = repo["name"]
+    desc = repo.get("description") or ""
+    lang = repo.get("language") or ""
+    stars = repo.get("stargazers_count", 0)
+    forks = repo.get("forks_count", 0)
+    lang_color = LANGUAGE_COLORS.get(lang, "#8b949e")
+
+    desc_lines = _wrap_text(desc)
+
+    w, h = 400, 120
+    name_fill = "#58a6ff"
+    desc_fill = "#8b949e"
+    footer_fill = "#8b949e"
+
+    parts = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" '
+        f'height="{h}" viewBox="0 0 {w} {h}">',
+        f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" '
+        f'rx="4.5" fill="{BG_COLOR}" stroke="{BORDER_COLOR}"/>',
+    ]
+
+    # Repo icon + name
+    parts.append(_svg_octicon(_ICON_REPO, 20, 14, "#8b949e"))
+    parts.append(
+        f'<text x="44" y="28" font-family="{_SVG_FONT}" font-size="14" '
+        f'font-weight="bold" fill="{name_fill}">'
+        f"{xml_escape(name)}</text>"
+    )
+
+    # Description (up to two lines)
+    desc_y = 50
+    for j, line in enumerate(desc_lines):
+        parts.append(
+            f'<text x="20" y="{desc_y + j * 16}" font-family="{_SVG_FONT}" '
+            f'font-size="12" fill="{desc_fill}">'
+            f"{xml_escape(line)}</text>"
+        )
+
+    # Footer: language · stars · forks
+    fy = h - 16
+    fx = 20
+
+    if lang:
+        parts.append(
+            f'<circle cx="{fx + 6}" cy="{fy - 4}" r="6" '
+            f'fill="{lang_color}"/>'
+        )
+        parts.append(
+            f'<text x="{fx + 18}" y="{fy}" font-family="{_SVG_FONT}" '
+            f'font-size="12" fill="{footer_fill}">'
+            f"{xml_escape(lang)}</text>"
+        )
+        fx += 18 + len(lang) * 7.2 + 16
+
+    if stars:
+        ix = int(fx)
+        parts.append(_svg_octicon(_ICON_STAR, ix, fy - 13, footer_fill))
+        parts.append(
+            f'<text x="{ix + 20}" y="{fy}" font-family="{_SVG_FONT}" '
+            f'font-size="12" fill="{footer_fill}">{stars}</text>'
+        )
+        fx = ix + 20 + len(str(stars)) * 7.2 + 16
+
+    if forks:
+        ix = int(fx)
+        parts.append(_svg_octicon(_ICON_FORK, ix, fy - 13, footer_fill))
+        parts.append(
+            f'<text x="{ix + 20}" y="{fy}" font-family="{_SVG_FONT}" '
+            f'font-size="12" fill="{footer_fill}">{forks}</text>'
+        )
+
+    parts.append("</svg>")
+
+    with open(out_path, "w", encoding="utf-8") as fh:
+        fh.write("\n".join(parts))
+
+
+def generate_repo_cards(repos, assets_dir):
+    """Generate SVG pin cards for the top repositories by star count."""
+    owned = [r for r in repos if not r.get("fork", False)]
+    top = sorted(
+        owned, key=lambda r: r.get("stargazers_count", 0), reverse=True
+    )[:8]
+
+    for repo in top:
+        out = os.path.join(assets_dir, f"pin-{repo['name']}.svg")
+        generate_repo_card(repo, out)
+        print(f"    {repo['name']} -> {out}")
+
+    return [r["name"] for r in top]
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -345,6 +587,16 @@ def main():
     generate_trend_chart(
         repos, commits_by_year, os.path.join(ASSETS_DIR, "trend-chart.png")
     )
+
+    print("Generating GitHub stats card …")
+    generate_stats_card(
+        repos, commits_by_year,
+        os.path.join(ASSETS_DIR, "github-stats.svg"),
+    )
+
+    print("Generating repo pin cards …")
+    top_names = generate_repo_cards(repos, ASSETS_DIR)
+    print(f"  Top repos: {', '.join(top_names)}")
 
     print("Done!")
 
