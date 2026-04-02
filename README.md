@@ -50,7 +50,7 @@ If it's broken, I'll try to fix it. If it doesn't exist, I'll build it. And if i
 
 <div align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api?username=loryanstrant&show_icons=true&theme=github_dark&hide_border=true&include_all_commits=true&cache_seconds=86400"
+    src="assets/github-stats.svg"
     alt="Loryan's GitHub stats"
     height="165"
   />
@@ -96,22 +96,22 @@ If it's broken, I'll try to fix it. If it doesn't exist, I'll build it. And if i
 
 <div align="center">
   <a href="https://github.com/loryanstrant/MicrosoftCloudLogos">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=MicrosoftCloudLogos&theme=github_dark&hide_border=true&cache_seconds=86400" alt="MicrosoftCloudLogos"/>
+    <img src="assets/pin-MicrosoftCloudLogos.svg" alt="MicrosoftCloudLogos"/>
   </a>
   <a href="https://github.com/loryanstrant/PowerThings">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=PowerThings&theme=github_dark&hide_border=true&cache_seconds=86400" alt="PowerThings"/>
+    <img src="assets/pin-PowerThings.svg" alt="PowerThings"/>
   </a>
   <a href="https://github.com/loryanstrant/ha-MU-TH-UR-6000-cards">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=ha-MU-TH-UR-6000-cards&theme=github_dark&hide_border=true&cache_seconds=86400" alt="ha-MU-TH-UR-6000-cards"/>
+    <img src="assets/pin-ha-MU-TH-UR-6000-cards.svg" alt="ha-MU-TH-UR-6000-cards"/>
   </a>
   <a href="https://github.com/loryanstrant/ha-weylandyutani">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=ha-weylandyutani&theme=github_dark&hide_border=true&cache_seconds=86400" alt="ha-weylandyutani"/>
+    <img src="assets/pin-ha-weylandyutani.svg" alt="ha-weylandyutani"/>
   </a>
   <a href="https://github.com/loryanstrant/anzusergroups">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=anzusergroups&theme=github_dark&hide_border=true&cache_seconds=86400" alt="anzusergroups"/>
+    <img src="assets/pin-anzusergroups.svg" alt="anzusergroups"/>
   </a>
   <a href="https://github.com/loryanstrant/ha-youtubevideocard">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=loryanstrant&repo=ha-youtubevideocard&theme=github_dark&hide_border=true&cache_seconds=86400" alt="ha-youtubevideocard"/>
+    <img src="assets/pin-ha-youtubevideocard.svg" alt="ha-youtubevideocard"/>
   </a>
 </div>
 
@@ -144,7 +144,7 @@ If it's broken, I'll try to fix it. If it doesn't exist, I'll build it. And if i
     </td>
   </tr>
   <tr>
-    <td width="50%" valign="top">
+    <td colspan="2" valign="top">
       <h3>
         <a href="https://www.mscloudlogos.com">☁️ mscloudlogos.com</a>
       </h3>
@@ -157,7 +157,6 @@ If it's broken, I'll try to fix it. If it doesn't exist, I'll build it. And if i
         <a href="https://github.com/loryanstrant/MicrosoftCloudLogos">MicrosoftCloudLogos</a> repo.
       </p>
     </td>
-    <td width="50%" valign="top"></td>
   </tr>
 </table>
 
