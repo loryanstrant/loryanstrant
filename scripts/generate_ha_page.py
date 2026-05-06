@@ -199,6 +199,35 @@ def _humanise_repo_name(repo_name: str) -> str:
     return " ".join(result)
 
 
+def _get_readme_title(repo_name: str, default_branch: str = "main") -> str | None:
+    """
+    Return the text of the first H1 heading found in the repo's README,
+    or *None* if no README or no H1 is present.
+
+    Tries ``README.md`` first, then ``readme.md`` and ``README.MD``.
+    Only the raw file is fetched — no HTML rendering needed.
+    """
+    candidate_names = ["README.md", "readme.md", "README.MD", "Readme.md"]
+    for branch in dict.fromkeys([default_branch, "main", "master"]):
+        for readme in candidate_names:
+            url = (
+                f"https://raw.githubusercontent.com/{USERNAME}/"
+                f"{repo_name}/{branch}/{readme}"
+            )
+            try:
+                resp = requests.get(url, headers=HEADERS, timeout=10)
+                if resp.status_code != 200:
+                    continue
+                for line in resp.text.splitlines():
+                    # Match ATX-style headings: "# Some Title"
+                    m = re.match(r"^#\s+(.+)", line.rstrip())
+                    if m:
+                        return m.group(1).strip()
+            except Exception:
+                pass
+    return None
+
+
 def _get_hacs_name(repo_name: str, default_branch: str = "main") -> str | None:
     """Try to read the display name from hacs.json in the repo root."""
     for branch in dict.fromkeys([default_branch, "main", "master"]):
@@ -219,10 +248,20 @@ def _get_hacs_name(repo_name: str, default_branch: str = "main") -> str | None:
 
 
 def get_display_name(repo: dict) -> str:
-    """Resolve the best human-readable name for a repo."""
-    hacs_name = _get_hacs_name(
-        repo["name"], repo.get("default_branch", "main")
-    )
+    """
+    Resolve the best human-readable name for a repo.
+
+    Priority
+    --------
+    1. First H1 heading in the README (e.g. "MU/TH/UR 6000 Cards for Home Assistant")
+    2. ``name`` field in ``hacs.json``
+    3. Humanised repo name (CamelCase / hyphen splitting)
+    """
+    branch = repo.get("default_branch", "main")
+    readme_title = _get_readme_title(repo["name"], branch)
+    if readme_title:
+        return readme_title
+    hacs_name = _get_hacs_name(repo["name"], branch)
     return hacs_name if hacs_name else _humanise_repo_name(repo["name"])
 
 
