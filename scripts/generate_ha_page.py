@@ -79,6 +79,13 @@ DASHBOARD_TOPICS = frozenset(
 # Name prefixes that identify HA repos even when topics are absent
 HA_NAME_PREFIXES = ("ha-", "ha_", "homeassistant", "home-assistant")
 
+# Repos explicitly excluded from the page (e.g. listings, resource collections)
+EXCLUDED_REPOS = frozenset(
+    {
+        "HomeAssistantPlusMicrosoft",
+    }
+)
+
 # Image file extensions we'll accept as preview images
 IMAGE_EXTENSIONS = frozenset({".png", ".jpg", ".jpeg", ".gif", ".webp"})
 
@@ -121,6 +128,8 @@ def get_all_repos() -> list[dict]:
 def is_ha_repo(repo: dict) -> bool:
     """Return True for non-forked repos that are Home Assistant related."""
     if repo.get("fork"):
+        return False
+    if repo["name"] in EXCLUDED_REPOS:
         return False
     topics = set(repo.get("topics", []))
     if topics & HA_TOPICS:
