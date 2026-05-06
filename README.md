@@ -117,6 +117,18 @@ If it's broken, I'll try to fix it. If it doesn't exist, I'll build it. And if i
 
 ---
 
+## 🏠 Home Assistant Projects
+
+> Custom integrations, themes, and dashboard cards I've built for Home Assistant — listed with release info, star counts, and previews.
+
+<div align="center">
+  <a href="home-assistant.md">
+    <img src="https://img.shields.io/badge/View%20all%20HA%20projects-41BDF5?style=for-the-badge&logo=home-assistant&logoColor=white" alt="View all Home Assistant projects"/>
+  </a>
+</div>
+
+---
+
 ## 🌐 My Sites
 
 <table>
