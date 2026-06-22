@@ -1,7 +1,7 @@
 # 🏠 Home Assistant Projects
 
 > My open-source Home Assistant custom integrations, themes, and dashboard cards —
-> auto-updated weekly. **Last updated: 2026-06-15**
+> auto-updated weekly. **Last updated: 2026-06-22**
 
 ---
 
@@ -16,9 +16,9 @@
 |  | [HA-ElevenLabs-custom-TTS](https://github.com/loryanstrant/HA-ElevenLabs-Custom-TTS) | 🔌 Integration | An ElevenLabs TTS integration for Home Assistant that allows for creation of voice profiles and passing *all* customisation settings. | `v0.7.0`<br/><sub>2026-05-16</sub> | ⭐ 2 |
 |  | [HACS Update Action Tracker](https://github.com/loryanstrant/HACS-Update-Action-Tracker) | 🔌 Integration | A replacement for the regular HACS update that also adds tasks for you to action if the update has changes or features you want to utilise. | `v1.0.1`<br/><sub>2026-05-26</sub> | ⭐ 4 |
 |  | [HidrateSpark MQTT Bridge](https://github.com/loryanstrant/HidrateSpark-MQTT-bridge) | 📦 Other | A Docker container that uses onboard Bluetooth to read data from a HidrateSpark bottle and publishes it via MQTT to Home Assistant. | — | ⭐ 4 |
-|  | [HidrateSpark — Home Assistant integration](https://github.com/loryanstrant/HA-HidrateSpark-Bluetooth-Proxy) | 🔌 Integration | A custom integration for Home Assistant that connects to HidrateSpark bottles via ESPHome Bluetooth proxy devices | `v0.1.6`<br/><sub>2026-05-04</sub> | ⭐ 2 |
+|  | [HidrateSpark — Home Assistant integration](https://github.com/loryanstrant/HA-HidrateSpark-Bluetooth-Proxy) | 🔌 Integration | A custom integration for Home Assistant that connects to HidrateSpark bottles via ESPHome Bluetooth proxy devices | `v0.2.0`<br/><sub>2026-06-21</sub> | ⭐ 2 |
 |  | [Home Assistant + ESPHome + Microsoft Teams = standing desk control](https://github.com/loryanstrant/HA-ESPHome-TeamsDesk) | 📦 Other | A Home Assistant & ESPHome solution for having your desk raise whenever you join a Microsoft Teams meeting | — | ⭐ 7 |
-| <img src="https://raw.githubusercontent.com/loryanstrant/HA-CustomComponentMonitor/main/docs/images/update-action-tracker-card.png" width="120" alt="preview" /> | [Home Assistant Custom Component Monitor](https://github.com/loryanstrant/HA-CustomComponentMonitor) | 🎨 Theme · 🔌 Integration · 📊 Dashboard | Reports on whether you are using your Home Assistant custom components | `v1.7.0`<br/><sub>2026-06-11</sub> | ⭐ 28 |
+| <img src="https://raw.githubusercontent.com/loryanstrant/HA-CustomComponentMonitor/main/docs/images/update-action-tracker-card.png" width="120" alt="preview" /> | [Home Assistant Custom Component Monitor](https://github.com/loryanstrant/HA-CustomComponentMonitor) | 🎨 Theme · 🔌 Integration · 📊 Dashboard | Reports on whether you are using your Home Assistant custom components | `v1.7.0`<br/><sub>2026-06-11</sub> | ⭐ 30 |
 |  | [Home Assistant Jokes Integration](https://github.com/loryanstrant/ha-jokes) | 🔌 Integration | An integration to randomly display jokes from several providers | `v1.3.1`<br/><sub>2025-11-19</sub> | ⭐ 7 |
 |  | [LG webOS TV Classic](https://github.com/loryanstrant/HA-LG-webOSTV) | 🔌 Integration | An alternative implementation of the LG webOS TV integration for Home Assistant | `v0.2.1`<br/><sub>2026-03-01</sub> | ⭐ 4 |
 |  | [LocalAI Monitor - Home Assistant Integration](https://github.com/loryanstrant/HA-LocalAI-Monitor) | 🔌 Integration | An integration for Home Assistant that provides information about your LocalAI instance. | `v1.5.0`<br/><sub>2026-06-12</sub> | ⭐ 3 |
@@ -31,9 +31,9 @@
 |  | [Transformers Theme for Home Assistant](https://github.com/loryanstrant/ha-transformers-theme) | 🎨 Theme · 🔌 Integration · 📊 Dashboard | A Transformers theme for Home Assistant | `v1.0.1`<br/><sub>2026-05-26</sub> | ⭐ 1 |
 |  | [Vertical Blinds Card for Home Assistant](https://github.com/loryanstrant/ha-vertical-blinds-card) | 🔌 Integration · 📊 Dashboard | A card to display vertical blinds | `v0.2.1`<br/><sub>2026-06-11</sub> | ⭐ 1 |
 | <img src="https://raw.githubusercontent.com/loryanstrant/ha-weylandyutani/main/preview.png" width="120" alt="preview" /> | [Weyland-Yutani Theme for Home Assistant](https://github.com/loryanstrant/ha-weylandyutani) | 🎨 Theme | A Weyland-Yutani inspired theme for Home Assistant | `v1.0.0`<br/><sub>2025-10-25</sub> | ⭐ 25 |
-| <img src="https://raw.githubusercontent.com/loryanstrant/ha-youtubevideocard/main/images/YouTube card preview.png" width="120" alt="preview" /> | [YouTube Video Card for Home Assistant](https://github.com/loryanstrant/ha-youtubevideocard) | 🔌 Integration · 📊 Dashboard | A dashboard card for Home Assistant that allows the embedding of YouTube videos and playlists | `v2.0.0`<br/><sub>2026-06-10</sub> | ⭐ 18 |
+| <img src="https://raw.githubusercontent.com/loryanstrant/ha-youtubevideocard/main/images/YouTube card preview.png" width="120" alt="preview" /> | [YouTube Video Card for Home Assistant](https://github.com/loryanstrant/ha-youtubevideocard) | 🔌 Integration · 📊 Dashboard | A dashboard card for Home Assistant that allows the embedding of YouTube videos and playlists | `v2.0.0`<br/><sub>2026-06-10</sub> | ⭐ 17 |
 |  | [🏠 HA Log Debugger AI](https://github.com/loryanstrant/HA-Log-Debugger-AI) | 📦 Other | A container that analyses your Home Assistant logs for any errors, then uses a LLM to suggest fixes. | — | ⭐ 1 |
 
 ---
 
-*Auto-generated by [GitHub Actions](.github/workflows/update-ha-page.yml). Last run: 2026-06-15.*
+*Auto-generated by [GitHub Actions](.github/workflows/update-ha-page.yml). Last run: 2026-06-22.*
