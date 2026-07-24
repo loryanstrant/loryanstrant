@@ -8,6 +8,7 @@ This page is the short version of what that looks like in practice.
 
 Every AI coding session is automatically archived to a private git repository and narrated into an engineering notebook (more on that below), which makes the pace easy to measure: **220+ sessions in the first nine weeks**, averaging around 70 exchanges per session, and ramping from a handful of experiments to a sustained 50–70 sessions per week.
 
+<!-- sessions-chart:start -->
 ```mermaid
 xychart-beta
     title "AI coding sessions per week (2026)"
@@ -15,8 +16,9 @@ xychart-beta
     y-axis "Sessions" 0 --> 80
     bar [1, 0, 2, 5, 16, 17, 16, 45, 70, 51]
 ```
+<!-- sessions-chart:end -->
 
-*(The last bar is a partial week.)*
+*(The last bar is a partial week; the chart refreshes weekly, straight from the engineering notebook's data.)*
 
 ## The flagship: Station
 
@@ -28,7 +30,7 @@ Hundreds of pull requests, every one reviewed, with migrations, test suites, and
 
 The part that tends to interest people most: the AI tooling is itself vibe-coded.
 
-- **Rufus** — a sovereign coding container that runs the AI coding agents (Claude Code, Copilot CLI, and a local LLM fallback) with its own web cockpit and mobile app, deliberately independent of the rest of the lab so AI-assisted engineering keeps working even when everything else is down.
+- **[Rufus](RUFUS.md)** — a sovereign coding container that runs the AI coding agents (Claude Code, Copilot CLI, and a local LLM fallback) with its own web cockpit and mobile app, deliberately independent of the rest of the lab so AI-assisted engineering keeps working even when everything else is down. *[Full write-up with screenshots →](RUFUS.md)*
 - **A standards repo the agents consume.** Coding conventions, infrastructure maps, and security rules live in a `dev-standards` repository that every agent session loads on boot — the agents follow the house rules because the house rules are code.
 - **An engineering notebook that writes itself.** Every coding session is archived raw to git, then Station's journal component turns the archive into readable narrative entries — a searchable history of what was built, how, and why.
 - **MCP-first operations.** The lab's services sit behind an MCP gateway — around 26 services and 1,100+ tools — so agents observe and operate everything through MCP rather than bespoke API calls or poking at servers.
@@ -37,7 +39,7 @@ The part that tends to interest people most: the AI tooling is itself vibe-coded
 ## Agents and ambient AI
 
 - **Hermes** — an overnight analyst agent with read-only access to Station that reviews the day's data and leaves its thinking behind for the morning.
-- **Meeting task capture** — a room microphone with voice-activity detection and speaker identification that turns commitments I make in Teams meetings into Station tasks, validated end-to-end on real calls.
+- **Meeting task capture** — a desk microphone that turns commitments I make in Teams meetings into Station tasks, validated end-to-end on real calls. **Consent matters here, so this is built to record exactly one person: me.** The speaker-identification model is trained on my voice alone; audio that doesn't match my voiceprint is discarded on the spot, never transcribed and never stored. Other participants are not recorded — full stop.
 - **A fully local voice and LLM stack** — text-to-speech, Whisper transcription, and LocalAI-hosted models running on my own GPUs. Privacy by design: the ambient parts of the system don't send audio or personal data off the network.
 
 ## Beyond code: AI-assisted operations
