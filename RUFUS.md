@@ -22,11 +22,19 @@ Sessions can switch engines mid-feature without losing state:
 
 Failover is automatic and usage-aware: Rufus tracks live subscription usage, and when the Claude window is nearly exhausted it hands the turn to Copilot until the window resets — then falls back further to the local model if Copilot is spent too. A **session queue** takes briefs (repo + prompt) and runs them one at a time unattended, each producing a PR to review in the morning.
 
-![The session list and live subscription usage — the failover cascade runs off these numbers](assets/rufus-sessions.png)
+![Starting a session — engine, autonomy mode, model, intensity and priority, chosen per session](assets/rufus-new-session.png)
 
 ## The approval bridge
 
 Agentic AI with infrastructure access needs a leash. Read-only actions run freely; consequential actions **block the session and surface as approval cards** in the UI (and on the phone) until a human answers. On top of that, a set of house rules — never merge a PR on the public mirror, never touch the deploy clone, no destructive container recreates — is **hard-blocked in code, in every permission mode**, including fully autonomous ones. The AI can't talk its way past them, and neither can I in a careless moment.
+
+The same bridge carries structured questions: when the agent needs a decision, it stops and asks — a multi-question card with options, blocking the turn until answered.
+
+![Rufus asking clarifying questions — a multi-step question card with options, mirrored in the side panel](assets/rufus-questions.png)
+
+Plan-first is the default working style: the agent investigates, writes up an implementation plan, and presents it for review — with a choice of how much autonomy to grant for the execution. Nothing touches a file until the plan is approved.
+
+![A plan presented for review — the versioned write-up on the right, approval choices below](assets/rufus-plan-review.png)
 
 ## Senses
 
