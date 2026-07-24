@@ -1,6 +1,6 @@
 # Vibe coding: what I've built with agentic AI
 
-By day I'm a Microsoft 365 consultant and MVP. Outside of that, I design, build, and operate a portfolio of production software almost entirely through **agentic AI coding** — primarily Claude Code, with GitHub Copilot CLI as a second engine — applied with real engineering discipline: everything ships through pull requests, tests, architecture decision records, and docs written in the same commit as the code.
+By day I'm a Microsoft 365 consultant and MVP. Outside of that, I design, build, and operate a portfolio of production software **and the infrastructure it runs on** almost entirely through **agentic AI** — primarily Claude Code, with GitHub Copilot CLI as a second engine — applied with real engineering discipline: everything ships through pull requests, tests, architecture decision records, and docs written in the same commit as the code.
 
 This page is the short version of what that looks like in practice.
 
@@ -31,13 +31,26 @@ The part that tends to interest people most: the AI tooling is itself vibe-coded
 - **Rufus** — a sovereign coding container that runs the AI coding agents (Claude Code, Copilot CLI, and a local LLM fallback) with its own web cockpit and mobile app, deliberately independent of the rest of the lab so AI-assisted engineering keeps working even when everything else is down.
 - **A standards repo the agents consume.** Coding conventions, infrastructure maps, and security rules live in a `dev-standards` repository that every agent session loads on boot — the agents follow the house rules because the house rules are code.
 - **An engineering notebook that writes itself.** Every coding session is archived raw to git, then Station's journal component turns the archive into readable narrative entries — a searchable history of what was built, how, and why.
-- **API-driven operations.** Deployments go through Dockhand, a vibe-coded Docker stack manager, so agents deploy through an audited API rather than poking at servers.
+- **MCP-first operations.** The lab's services sit behind an MCP gateway — around 26 services and 1,100+ tools — so agents observe and operate everything through MCP rather than bespoke API calls or poking at servers.
+- **Containers everywhere.** Everything is built into Docker containers — portable, sandboxed, reproducible — with internal DNS and a reverse proxy giving every service a clean, stable name.
 
 ## Agents and ambient AI
 
 - **Hermes** — an overnight analyst agent with read-only access to Station that reviews the day's data and leaves its thinking behind for the morning.
 - **Meeting task capture** — a room microphone with voice-activity detection and speaker identification that turns commitments I make in Teams meetings into Station tasks, validated end-to-end on real calls.
 - **A fully local voice and LLM stack** — text-to-speech, Whisper transcription, and LocalAI-hosted models running on my own GPUs. Privacy by design: the ambient parts of the system don't send audio or personal data off the network.
+
+## Beyond code: AI-assisted operations
+
+Not everything the agents do is development. The same tooling runs the operations side of the lab, and increasingly that's where it earns its keep:
+
+- standing up an **observability platform** — metrics, logs, and dashboards across every host
+- rolling out **internal DNS** and reverse-proxy routing
+- **network troubleshooting** and presence-sensor tuning
+- **container cleanups**, memory-leak hunting, and performance diagnosis
+- and the occasional oddball, like designing the control panel for the sauna
+
+In practice it's an operations partner with perfect recall of the whole environment, not just a code generator.
 
 ## A selection of public repos (all vibe-coded)
 
