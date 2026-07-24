@@ -44,6 +44,8 @@ A few things I'm known for:
 
 If it's broken, I'll try to fix it. If it doesn't exist, I'll build it. And if it already exists but could be better, well… that's what pull requests are for.
 
+> 🤖 **Curious what I build with AI?** See my [vibe coding portfolio](VIBE-CODING.md) — 220+ agentic coding sessions and the systems they produced.
+
 ---
 
 ## 📊 GitHub Stats
