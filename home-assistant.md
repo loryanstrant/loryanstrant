@@ -1,13 +1,13 @@
 # 🏠 Home Assistant Projects
 
 > My open-source Home Assistant custom integrations, themes, and dashboard cards —
-> auto-updated weekly. **Last updated: 2026-08-03**
+> auto-updated weekly. **Last updated: 2026-08-10**
 
 ---
 
 | Preview | Name | Type | Description | Latest Release | Stars |
 |:-------:|------|------|-------------|:--------------:|:-----:|
-|  | [Azure AI Tasks - Home Assistant Integration](https://github.com/loryanstrant/HA-Azure-AI-tasks) | 🔌 Integration | A Home Assistant custom integration that facilitates AI tasks using Azure AI | `v2.2.0`<br/><sub>2026-06-10</sub> | ⭐ 10 |
+|  | [Azure AI Tasks - Home Assistant Integration](https://github.com/loryanstrant/HA-Azure-AI-tasks) | 🔌 Integration | A Home Assistant custom integration that facilitates AI tasks using Azure AI | `v2.2.0`<br/><sub>2026-06-10</sub> | ⭐ 11 |
 | <img src="https://raw.githubusercontent.com/loryanstrant/Azure-Personal-Voice-HA/main/Azure-Personal-Voice-HA-logo-small.jpeg" width="120" alt="preview" /> | [Azure Personal Voice in Home Assistant](https://github.com/loryanstrant/Azure-Personal-Voice-HA) | 📦 Other | Azure Personal Voice in Home Assistant | — | — |
 |  | [Blackout theme for Home Assistant](https://github.com/loryanstrant/blackout) | 🎨 Theme · 📊 Dashboard | A really simple theme for Home Assistant... no borders, nothing, just pure black! | `v1.0.0`<br/><sub>2025-06-28</sub> | ⭐ 2 |
 | <img src="https://raw.githubusercontent.com/loryanstrant/HA-Cortana-satellite-rings/main/images/card-breathe.png" width="120" alt="preview" /> | [Cortana Rings for Home Assistant](https://github.com/loryanstrant/HA-Cortana-satellite-rings) | 🔌 Integration · 📊 Dashboard | A card to display the Cortana ring animation for Home Assistant voice satellites | `v0.2.1`<br/><sub>2026-06-11</sub> | ⭐ 1 |
@@ -18,13 +18,13 @@
 |  | [HidrateSpark MQTT Bridge](https://github.com/loryanstrant/HidrateSpark-MQTT-bridge) | 📦 Other | A Docker container that uses onboard Bluetooth to read data from a HidrateSpark bottle and publishes it via MQTT to Home Assistant. | — | ⭐ 4 |
 |  | [HidrateSpark — Home Assistant integration](https://github.com/loryanstrant/HA-HidrateSpark-Bluetooth-Proxy) | 🔌 Integration | A custom integration for Home Assistant that connects to HidrateSpark bottles via ESPHome Bluetooth proxy devices | `v0.2.0`<br/><sub>2026-06-21</sub> | ⭐ 5 |
 |  | [Home Assistant + ESPHome + Microsoft Teams = standing desk control](https://github.com/loryanstrant/HA-ESPHome-TeamsDesk) | 📦 Other | A Home Assistant & ESPHome solution for having your desk raise whenever you join a Microsoft Teams meeting | — | ⭐ 7 |
-| <img src="https://raw.githubusercontent.com/loryanstrant/HA-CustomComponentMonitor/main/docs/images/update-action-tracker-card.png" width="120" alt="preview" /> | [Home Assistant Custom Component Monitor](https://github.com/loryanstrant/HA-CustomComponentMonitor) | 🎨 Theme · 🔌 Integration · 📊 Dashboard | Reports on whether you are using your Home Assistant custom components | `v1.13.0`<br/><sub>2026-07-31</sub> | ⭐ 35 |
+| <img src="https://raw.githubusercontent.com/loryanstrant/HA-CustomComponentMonitor/main/docs/images/update-action-tracker-card.png" width="120" alt="preview" /> | [Home Assistant Custom Component Monitor](https://github.com/loryanstrant/HA-CustomComponentMonitor) | 🎨 Theme · 🔌 Integration · 📊 Dashboard | Reports on whether you are using your Home Assistant custom components | `v1.13.1`<br/><sub>2026-08-06</sub> | ⭐ 36 |
 | <img src="https://raw.githubusercontent.com/loryanstrant/ha-jokes/main/images/card.png" width="120" alt="preview" /> | [Home Assistant Jokes Integration](https://github.com/loryanstrant/ha-jokes) | 🔌 Integration | An integration to randomly display jokes from several providers | `v1.6.0`<br/><sub>2026-07-25</sub> | ⭐ 7 |
 | <img src="https://raw.githubusercontent.com/loryanstrant/ha-home-connect-oven-card/main/screenshots/card-door-open.png" width="120" alt="preview" /> | [Home Connect Oven Card](https://github.com/loryanstrant/ha-home-connect-oven-card) | 📊 Dashboard | A Home Assistant card for Home Connect ovens (Bosch & others) | `v0.2.4`<br/><sub>2026-07-24</sub> | ⭐ 1 |
-|  | [LG webOS TV Classic](https://github.com/loryanstrant/HA-LG-webOSTV) | 🔌 Integration | An alternative implementation of the LG webOS TV integration for Home Assistant | `v0.2.1`<br/><sub>2026-03-01</sub> | ⭐ 4 |
-|  | [LocalAI Monitor - Home Assistant Integration](https://github.com/loryanstrant/HA-LocalAI-Monitor) | 🔌 Integration | An integration for Home Assistant that provides information about your LocalAI instance. | `v1.5.0`<br/><sub>2026-06-12</sub> | ⭐ 3 |
+|  | [LG webOS TV Classic](https://github.com/loryanstrant/HA-LG-webOSTV) | 🔌 Integration | An alternative implementation of the LG webOS TV integration for Home Assistant | `v0.2.1`<br/><sub>2026-03-01</sub> | ⭐ 5 |
+|  | [LocalAI Monitor - Home Assistant Integration](https://github.com/loryanstrant/HA-LocalAI-Monitor) | 🔌 Integration | An integration for Home Assistant that provides information about your LocalAI instance. | `v1.5.0`<br/><sub>2026-06-12</sub> | ⭐ 5 |
 |  | [Log Debugger for Home Assistant](https://github.com/loryanstrant/HA-Log-Debugger) | 🔌 Integration | A custom component for Home Assistant that helps with debugging log messages | — | ⭐ 2 |
-|  | [MU/TH/UR 6000 Cards for Home Assistant](https://github.com/loryanstrant/ha-MU-TH-UR-6000-cards) | 📊 Dashboard | A series of cards for Home Assistant based on the appearance of MU/TH/UR 6000 in the Alien movies | `v1.1.7`<br/><sub>2025-11-16</sub> | ⭐ 29 |
+|  | [MU/TH/UR 6000 Cards for Home Assistant](https://github.com/loryanstrant/ha-MU-TH-UR-6000-cards) | 📊 Dashboard | A series of cards for Home Assistant based on the appearance of MU/TH/UR 6000 in the Alien movies | `v1.1.7`<br/><sub>2025-11-16</sub> | ⭐ 30 |
 |  | [Navigation Menu Manager](https://github.com/loryanstrant/HA-Navigation-Menu-Manager) | 🔌 Integration · 📊 Dashboard | A Home Assistant integration + card to centralise the management of reusable navigation menus. | `v0.1.10`<br/><sub>2026-07-19</sub> | ⭐ 1 |
 |  | [Personal Hydration Manager](https://github.com/loryanstrant/HA-Personal-Hydration-Manager) | 🔌 Integration | A Home Assistant integration to track daily water intake for one or more people in your household, with a built-in Lovelace card. | `v0.1.14`<br/><sub>2026-05-20</sub> | ⭐ 3 |
 |  | [Schvitz Master 3000](https://github.com/loryanstrant/HA-Schvitz-Master-3000) | 🔌 Integration | A Home Assistant integration for managing your sauna along with an ESPHome-powered panel | `v0.3.0`<br/><sub>2026-07-28</sub> | ⭐ 1 |
@@ -38,4 +38,4 @@
 
 ---
 
-*Auto-generated by [GitHub Actions](.github/workflows/update-ha-page.yml). Last run: 2026-08-03.*
+*Auto-generated by [GitHub Actions](.github/workflows/update-ha-page.yml). Last run: 2026-08-10.*
