@@ -10,6 +10,7 @@ Every AI coding session is automatically archived to a private git repository an
 
 <!-- sessions-chart:start -->
 ```mermaid
+%%{init: {"xyChart": {"width": 1400, "height": 420}} }%%
 xychart-beta
     title "AI coding sessions per week (2026)"
     x-axis ["18 May", "25 May", "1 Jun", "8 Jun", "15 Jun", "22 Jun", "29 Jun", "6 Jul", "13 Jul", "20 Jul", "27 Jul", "3 Aug", "10 Aug", "17 Aug", "24 Aug", "31 Aug"]
