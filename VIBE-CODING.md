@@ -14,9 +14,9 @@ Month by month: 1 in May, 42 in June, 213 in July, 274 in August, and 123 in the
 ```mermaid
 xychart-beta
     title "AI coding sessions per week (2026)"
-    x-axis ["18 May", "25 May", "1 Jun", "8 Jun", "15 Jun", "22 Jun", "29 Jun", "6 Jul", "13 Jul", "20 Jul", "27 Jul", "3 Aug", "10 Aug", "17 Aug", "24 Aug", "31 Aug", "7 Sep", "14 Sep"]
+    x-axis ["18 May", "25 May", "1 Jun", "8 Jun", "15 Jun", "22 Jun", "29 Jun", "6 Jul", "13 Jul", "20 Jul", "27 Jul", "3 Aug", "10 Aug", "17 Aug", "24 Aug", "31 Aug", "7 Sep", "14 Sep", "21 Sep"]
     y-axis "Sessions" 0 --> 210
-    bar [1, 0, 2, 5, 15, 17, 14, 39, 39, 64, 108, 34, 50, 68, 67, 206, 42, 0]
+    bar [1, 0, 2, 5, 15, 17, 14, 39, 39, 64, 108, 34, 50, 68, 67, 206, 42, 8, 0]
 ```
 <!-- sessions-chart:end -->
 
