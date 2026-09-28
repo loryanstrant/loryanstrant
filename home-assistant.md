@@ -1,13 +1,13 @@
 # 🏠 Home Assistant Projects
 
 > My open-source Home Assistant custom integrations, themes, and dashboard cards —
-> auto-updated weekly. **Last updated: 2026-09-21**
+> auto-updated weekly. **Last updated: 2026-09-28**
 
 ---
 
 | Preview | Name | Type | Description | Latest Release | Stars |
 |:-------:|------|------|-------------|:--------------:|:-----:|
-|  | [Azure AI Tasks - Home Assistant Integration](https://github.com/loryanstrant/HA-Azure-AI-tasks) | 🔌 Integration | A Home Assistant custom integration that facilitates AI tasks using Azure AI | `v2.2.0`<br/><sub>2026-06-10</sub> | ⭐ 11 |
+|  | [Azure AI Tasks - Home Assistant Integration](https://github.com/loryanstrant/HA-Azure-AI-tasks) | 🔌 Integration | A Home Assistant custom integration that facilitates AI tasks using Azure AI | `v2.4.0`<br/><sub>2026-09-25</sub> | ⭐ 11 |
 | <img src="https://raw.githubusercontent.com/loryanstrant/Azure-Personal-Voice-HA/main/Azure-Personal-Voice-HA-logo-small.jpeg" width="120" alt="preview" /> | [Azure Personal Voice in Home Assistant](https://github.com/loryanstrant/Azure-Personal-Voice-HA) | 📦 Other | Azure Personal Voice in Home Assistant | — | — |
 |  | [Blackout theme for Home Assistant](https://github.com/loryanstrant/blackout) | 🎨 Theme · 📊 Dashboard | A really simple theme for Home Assistant... no borders, nothing, just pure black! | `v1.0.0`<br/><sub>2025-06-28</sub> | ⭐ 2 |
 | <img src="https://raw.githubusercontent.com/loryanstrant/HA-Cortana-satellite-rings/main/images/card-breathe.png" width="120" alt="preview" /> | [Cortana Rings for Home Assistant](https://github.com/loryanstrant/HA-Cortana-satellite-rings) | 🔌 Integration · 📊 Dashboard | A card to display the Cortana ring animation for Home Assistant voice satellites | `v0.2.1`<br/><sub>2026-06-11</sub> | ⭐ 1 |
@@ -26,10 +26,10 @@
 |  | [LocalAI Monitor - Home Assistant Integration](https://github.com/loryanstrant/HA-LocalAI-Monitor) | 🔌 Integration | An integration for Home Assistant that provides information about your LocalAI instance. | `v1.5.0`<br/><sub>2026-06-12</sub> | ⭐ 5 |
 |  | [Log Debugger for Home Assistant](https://github.com/loryanstrant/HA-Log-Debugger) | 🔌 Integration | A custom component for Home Assistant that helps with debugging log messages | — | ⭐ 2 |
 |  | [MU/TH/UR 6000 Cards for Home Assistant](https://github.com/loryanstrant/ha-MU-TH-UR-6000-cards) | 📊 Dashboard | A series of cards for Home Assistant based on the appearance of MU/TH/UR 6000 in the Alien movies | `v1.1.7`<br/><sub>2025-11-16</sub> | ⭐ 31 |
-| <img src="https://raw.githubusercontent.com/loryanstrant/HA-Navigation-Menu-Manager/main/docs/images/card-editor.png" width="120" alt="preview" /> | [Navigation Menu Manager](https://github.com/loryanstrant/HA-Navigation-Menu-Manager) | 🔌 Integration · 📊 Dashboard | A Home Assistant integration + card to centralise the management of reusable navigation menus. | `v0.2.0`<br/><sub>2026-08-23</sub> | ⭐ 1 |
+| <img src="https://raw.githubusercontent.com/loryanstrant/HA-Navigation-Menu-Manager/main/docs/images/card-editor.png" width="120" alt="preview" /> | [Navigation Menu Manager](https://github.com/loryanstrant/HA-Navigation-Menu-Manager) | 🔌 Integration · 📊 Dashboard | A Home Assistant integration + card to centralise the management of reusable navigation menus. | `v0.2.1`<br/><sub>2026-09-25</sub> | ⭐ 1 |
 | <img src="https://raw.githubusercontent.com/loryanstrant/HA-Personal-Hydration-Manager/main/docs/images/card-editor-380.png" width="120" alt="preview" /> | [Personal Hydration Manager](https://github.com/loryanstrant/HA-Personal-Hydration-Manager) | 🔌 Integration | A Home Assistant integration to track daily water intake for one or more people in your household, with a built-in Lovelace card. | `v0.4.0`<br/><sub>2026-09-03</sub> | ⭐ 3 |
 |  | [Schvitz Master 3000](https://github.com/loryanstrant/HA-Schvitz-Master-3000) | 🔌 Integration | A Home Assistant integration for managing your sauna along with an ESPHome-powered panel | `v0.3.0`<br/><sub>2026-07-28</sub> | ⭐ 1 |
-|  | [Transformers Allspark UI](https://github.com/loryanstrant/HA-Transformers-Allspark-UI) | 🔌 Integration | An integration for Home Assistant that deploys several Transformers themes, G1 and movie fonts, and a bunch of cards | `v0.5.1`<br/><sub>2026-09-01</sub> | ⭐ 2 |
+|  | [Transformers Allspark UI](https://github.com/loryanstrant/HA-Transformers-Allspark-UI) | 🔌 Integration | An integration for Home Assistant that deploys several Transformers themes, G1 and movie fonts, and a bunch of cards | `v0.6.0`<br/><sub>2026-09-25</sub> | ⭐ 2 |
 | <img src="https://raw.githubusercontent.com/loryanstrant/ha-transformers-cards/main/screenshots/alarm-card.png" width="120" alt="preview" /> | [Transformers Cards for Home Assistant](https://github.com/loryanstrant/ha-transformers-cards) | 🔌 Integration · 📊 Dashboard | A series of cards for Home Assistant, in the style of Transformers G1 computer screens | `v1.0.1`<br/><sub>2026-05-26</sub> | ⭐ 3 |
 |  | [Transformers Theme for Home Assistant](https://github.com/loryanstrant/ha-transformers-theme) | 🎨 Theme · 🔌 Integration · 📊 Dashboard | A Transformers theme for Home Assistant | `v1.0.1`<br/><sub>2026-05-26</sub> | ⭐ 1 |
 |  | [Vertical Blinds Card for Home Assistant](https://github.com/loryanstrant/ha-vertical-blinds-card) | 🔌 Integration · 📊 Dashboard | A card to display vertical blinds | `v0.2.1`<br/><sub>2026-06-11</sub> | ⭐ 1 |
@@ -39,4 +39,4 @@
 
 ---
 
-*Auto-generated by [GitHub Actions](.github/workflows/update-ha-page.yml). Last run: 2026-09-21.*
+*Auto-generated by [GitHub Actions](.github/workflows/update-ha-page.yml). Last run: 2026-09-28.*
