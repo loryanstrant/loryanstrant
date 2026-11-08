@@ -16,7 +16,7 @@ xychart-beta
     title "AI coding sessions per month (2026)"
     x-axis ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov"]
     y-axis "Sessions" 0 --> 650
-    bar [1, 42, 213, 274, 604, 373, 34]
+    bar [1, 42, 213, 274, 604, 372, 186]
 ```
 <!-- sessions-chart:end -->
 
